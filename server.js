@@ -12,6 +12,7 @@ app.use(logger("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+require('./routes')(app);
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
 
